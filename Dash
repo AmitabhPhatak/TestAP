@@ -1,0 +1,53 @@
+import dash
+from dash import dcc, html
+from dash.dependencies import Input, Output
+import plotly.express as px
+
+# Dummy machine learning model function
+def predict_profile_parameters(input_string):
+    # Placeholder function; replace this with your actual ML model logic
+    # For demonstration, it generates random values
+    import random
+    return {'Parameter1': random.randint(1, 100),
+            'Parameter2': random.randint(1, 100),
+            'Parameter3': random.randint(1, 100)}
+
+# Initialize Dash app
+app = dash.Dash(__name__)
+
+# Layout of the app
+app.layout = html.Div([
+    html.H1("ML Model Dashboard"),
+    html.Label("Enter a 16-digit string:"),
+    dcc.Input(id='input-string', type='text', maxLength=16),
+    dcc.Graph(id='output-graph'),
+])
+
+# Define callback to update graph based on input string
+@app.callback(
+    Output('output-graph', 'figure'),
+    [Input('input-string', 'value')]
+)
+def update_graph(input_string):
+    if input_string and len(input_string) == 16:
+        # Call the ML model function with the input string
+        profile_parameters = predict_profile_parameters(input_string)
+
+        # Create a bar chart using Plotly Express
+        fig = px.bar(
+            x=list(profile_parameters.keys()),
+            y=list(profile_parameters.values()),
+            labels={'x': 'Parameters', 'y': 'Values'},
+            title='Profile Parameters'
+        )
+
+        return fig
+    else:
+        # Return an empty graph if input is invalid
+        return px.bar(title='Invalid Input')
+
+
+# Run the app
+if __name__ == '__main__':
+    app.run_server(debug=True)
+
