@@ -13,7 +13,7 @@ import pickle
 #cursor = cnx.cursor()
 
 # Load the machine learning model
-model = pickle.load(open('/home/Amitabhp/mysite/model_lr_ch1.pkl', 'rb'))
+model = pickle.load(open('/app/model_lr_ch1.pkl', 'rb'))
 
 #l=[0,10,1,1,30,1,1,1,1,120,110,150,40,70,6]
 #prediction2 = model.predict([l])
