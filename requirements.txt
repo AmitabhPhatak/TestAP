@@ -3,6 +3,6 @@ dash-bootstrap-components
 dash-core-components
 dash-html-components
 dash-renderer
-pandas=
+pandas
 numpy
 werkzeug
