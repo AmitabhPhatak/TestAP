@@ -1,8 +1,8 @@
-dash==1.9.0
-dash-bootstrap-components==0.13.0
-dash-core-components==1.8.0
-dash-html-components==1.0.2
-dash-renderer==1.2.4
-pandas==1.3.3
-numpy==1.21.2
-werkzeug==2.0.3
+dash
+dash-bootstrap-components
+dash-core-components
+dash-html-components
+dash-renderer
+pandas=
+numpy
+werkzeug
