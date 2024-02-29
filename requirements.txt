@@ -5,4 +5,4 @@ dash-html-components
 dash-renderer
 pandas
 numpy
-werkzeug
+werkzeug==2.0.1
