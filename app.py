@@ -7,7 +7,6 @@ import pickle
 #import mysql.connector
 #from sklearn.linear_model import LogisticRegression
 #import sklearn.linear_model.logistic
-from werkzeug.debug.tbtools import get_current_traceback
 
 # Connect to SQL database and table
 #cnx = mysql.connector.connect(user='Amitabh', password='Asp1234$', database='medapp')
